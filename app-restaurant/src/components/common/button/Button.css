@@ -1,0 +1,120 @@
+/* button css */
+.button {
+  display: inline-block;
+  background-color: #673ab7;
+  border-radius: 10px;
+  padding: 10px 20px;
+  min-width: 100px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  border: 1px solid transparent;
+  user-select: none;
+}
+.button,
+.button span {
+  color: #fff;
+}
+.button i,
+.button span,
+.button path,
+.button svg {
+  transition: all 0.15s ease-in-out;
+}
+.button:hover {
+  background-color: #35146f;
+}
+.button:active {
+  background-color: #2d0375;
+  transform: translateY(1px);
+}
+.button--circle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  padding: 0;
+  border-width: 2px;
+}
+.button--black {
+  background-color: #232323;
+}
+.button--black:hover,
+.button--black:active {
+  background-color: #3d3d3d;
+}
+.button--outline {
+  background-color: #fff;
+  border-color: #673ab7;
+}
+.button--outline,
+.button--outline span {
+  color: #673ab7;
+}
+.button--outline svg path {
+  fill: #673ab7;
+}
+.button--outline:hover {
+  background-color: #673ab7;
+}
+.button--outline:hover,
+.button--outline:hover span {
+  color: #fff;
+}
+.button--outline:hover svg path {
+  fill: #fff;
+}
+.button--outline:active {
+  background-color: #2f2048;
+}
+.button__delimiter {
+  width: 1px;
+  height: 25px;
+  background-color: rgba(255, 255, 255, 0.25);
+  margin-left: 14px;
+  margin-right: 14px;
+}
+.button--add svg {
+  margin-right: 2px;
+}
+.button--add span {
+  font-weight: 600;
+  font-size: 16px;
+}
+.button--add:hover i {
+  background-color: #fff;
+  color: #673ab7;
+}
+.button--add i {
+  display: inline-block;
+  border-radius: 30px;
+  background-color: #673ab7;
+  color: #fff;
+  font-weight: 600;
+  width: 22px;
+  height: 22px;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 22px;
+  position: relative;
+  top: -1px;
+  left: 3px;
+}
+.button--cart {
+  display: flex;
+  align-items: center;
+  line-height: 23px;
+  padding: 12px 25px;
+}
+.button--cart svg {
+  margin-right: 8px;
+  margin-bottom: 1px;
+}
+.button--cart span {
+  font-weight: 600;
+  font-size: 16px;
+}

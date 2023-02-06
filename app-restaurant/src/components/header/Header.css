@@ -1,0 +1,24 @@
+.header {
+  height: 60px;
+  background: #000000;
+  position: sticky;
+  top: 0;
+  z-index: 7;
+}
+.header__logo {
+  width: 60%;
+}
+.header > div {
+  height: 100%;
+}
+.header-links {
+  width: 45%;
+}
+.header__cart .button--cart {
+  padding: 5px 20px;
+}
+.delimetr {
+  width: 2px;
+  height: 50px;
+  background-color: #000000;
+}
