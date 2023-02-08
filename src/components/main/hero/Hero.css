@@ -1,0 +1,28 @@
+.hero .container {
+  margin: 50px auto;
+}
+.hero-description {
+  flex-direction: column;
+  padding-bottom: 40px;
+}
+.hero-description p {
+  height: 200px;
+}
+.hero-slogan {
+  height: 100vh;
+  background-image: url('../../common/image/slogan-bg.png');
+  background-position: center;
+  background-size: cover;
+}
+.hero-slogan > div {
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.hero-slogan p {
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 113px;
+  text-align: center;
+  color: #ffffff;
+}
