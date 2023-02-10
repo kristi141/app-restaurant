@@ -13,10 +13,11 @@ import React from 'react';
 
 function App() {
   const [db, setDb] = useState([]);
+  const [sliderData,setSliderData] = useState([])
   const [emptyBasketData, setEmptyBasketData] = useState([]);
   const [activeModal, setActiveModal] = useState(true);
   const [modalId, setModalId] = useState(null);
-  const [isLoading,setIsLoading] = useState(false)
+  const [isLoading,setIsLoading] = useState(true)
 
   const totalPrice = emptyBasketData.reduce(
     (prevVal, curVal) => prevVal + curVal.total * curVal.price,
@@ -65,28 +66,37 @@ function App() {
   };
 
   const onClearCardData = () => {
+    setEmptyBasketData(localStorage.clear())
     setEmptyBasketData([]);
-
   };
 
   useEffect(()=>{
     setEmptyBasketData(localStorage.getItem('basket') ? JSON.parse(localStorage.getItem('basket')) : [] )
   },[])
 
-  const fetchData =async() =>{
-    let resp = await fetch('http://localhost:3000/db.json')
-    let data = await resp.json()
-    setDb((data.data[0].oftenOrderCards))
-  }
+  // const fetchData =async() =>{
+  //   let resp = await fetch('http://localhost:3000/db.json')
+  //   let data = await resp.json()
+  //   setDb((data.data[0].oftenOrderCards))
+  // }
 
   useEffect(()=>{
-    axios.get('http://localhost:3000/db.json')
-    .then( ({data})  =>  {setDb(data.data[0].oftenOrderCards)
-    setIsLoading(true)})
+    axios.get('./db.json')
+    .then( ({data})  =>  {
+      setDb(data.data[0].oftenOrderCards)
+    setIsLoading(false)})
     // fetch('http://localhost:3000/db.json')
     // .then(response=> response.json())
     // .then(data=> setDb(data.data[0].oftenOrderCards))
-    fetchData()
+    // fetchData()
+  },[])
+
+  useEffect(()=>{
+    axios.get('./db.json')
+    .then( ({data})  =>  {
+      setSliderData(data.data[1].sliderCardData)
+   })
+    
   },[])
 
   return (
@@ -97,6 +107,7 @@ function App() {
           path="/"
           element={
             <Main
+            sliderData ={sliderData}
             isLoading={isLoading}
             setIsLoading={setIsLoading}
               onModalClick={onModalClick}

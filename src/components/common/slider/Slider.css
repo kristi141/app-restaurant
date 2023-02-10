@@ -119,3 +119,17 @@ figure.effect-text-one:hover p {
 .slider-right {
   cursor: pointer;
 }
+.slick-prev:before{
+  content: url('../image/slider-left.svg') 
+}
+.slick-next:before{
+  content: url('../image/slider0right.svg') 
+}
+.slick-prev{
+  left: -97px;
+  top: 46%;
+}
+.slick-next{
+  right: -52px;
+  top: 185px;
+}

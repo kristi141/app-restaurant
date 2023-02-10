@@ -1,11 +1,8 @@
 import React from 'react';
-import sliderLeftIcon from '../../common/image/slider-left.svg';
-import sliderRight from '../../common/image/slider0right.svg';
 import Slider from 'react-slick';
 import './Slider.css'
-import { data } from '../../data/data';
 
-export const Slide = () => {
+export const Slide = ({sliderData}) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -19,11 +16,10 @@ export const Slide = () => {
 
   return (
     <section className="slider d-flex">
-      <img className="slider-left" src={sliderLeftIcon} alt="" />
       <div className="container ">
         <div className="slider-image">
           <Slider {...settings}>
-            {data[1].sliderCardData.map((item) => (
+            {sliderData.map((item) => (
               <div key={item.id} className="hover-text-one">
                 <figure className="effect-text-one">
                   <img src={item.img} alt="" />
@@ -36,7 +32,6 @@ export const Slide = () => {
           </Slider>
         </div>
       </div>
-      <img className="slider-right" src={sliderRight} alt="" />
     </section>
   );
 };
