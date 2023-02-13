@@ -1,5 +1,5 @@
 import React from 'react';
-import './OftenOrder.css';
+import './OftenOrder.scss';
 
 const Card = ({ item, onModalClick }) => {
   return (
