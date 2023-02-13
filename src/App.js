@@ -14,6 +14,7 @@ import React from 'react';
 function App() {
   const [db, setDb] = useState([]);
   const [sliderData,setSliderData] = useState([])
+  const [menuData,setMenuData]=useState([])
   const [emptyBasketData, setEmptyBasketData] = useState([]);
   const [activeModal, setActiveModal] = useState(true);
   const [modalId, setModalId] = useState(null);
@@ -70,34 +71,31 @@ function App() {
     setEmptyBasketData([]);
   };
 
-  useEffect(()=>{
-    setEmptyBasketData(localStorage.getItem('basket') ? JSON.parse(localStorage.getItem('basket')) : [] )
-  },[])
+  
 
   // const fetchData =async() =>{
   //   let resp = await fetch('http://localhost:3000/db.json')
   //   let data = await resp.json()
   //   setDb((data.data[0].oftenOrderCards))
   // }
-
-  useEffect(()=>{
-    axios.get('./db.json')
-    .then( ({data})  =>  {
-      setDb(data.data[0].oftenOrderCards)
-    setIsLoading(false)})
-    // fetch('http://localhost:3000/db.json')
+ // fetch('http://localhost:3000/db.json')
     // .then(response=> response.json())
     // .then(data=> setDb(data.data[0].oftenOrderCards))
     // fetchData()
-  },[])
+
+   useEffect(()=>{
+    setEmptyBasketData(localStorage.getItem('basket') ? JSON.parse(localStorage.getItem('basket')) : [] )
+  },[]) 
 
   useEffect(()=>{
     axios.get('./db.json')
     .then( ({data})  =>  {
+      setDb(data.data[0].oftenOrderCards) 
       setSliderData(data.data[1].sliderCardData)
-   })
-    
+      setMenuData(data.data[2].menuCards)
+    setIsLoading(false)})
   },[])
+
 
   return (
     <div className="wrapper">
@@ -125,6 +123,8 @@ function App() {
           path="/menu"
           element={
             <OurMenuPage
+            setMenuData={setMenuData}
+            menuData={menuData}
               db={db}
               setDb={setDb}
               onAddData={onAddData}

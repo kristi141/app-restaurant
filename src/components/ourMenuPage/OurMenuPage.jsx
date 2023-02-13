@@ -16,6 +16,8 @@ const OurMenuPage = ({
   activeModal,
   setActiveModal,
   onModalClick,
+  menuData,
+  setMenuData,
 }) => {
   const [selectedType, setSelectedType] = useState({ type: 'rating' });
   const [searchQuary, setSearchQuary] = useState('');
@@ -24,7 +26,7 @@ const OurMenuPage = ({
 
   const lastPage = currentPage * prevPage;
   const firstPage = lastPage - prevPage;
-  const currentMenuPage = db.slice(firstPage, lastPage);
+  const currentMenuPage = menuData.slice(firstPage, lastPage);
 
   const sortTypes = [
     { name: 'популярности', type: 'rating' },
@@ -48,7 +50,7 @@ const OurMenuPage = ({
 
   const onSortData = (type) => {
     setSelectedType(type);
-    setDb(sortedData);
+    setMenuData(sortedData);
   };
 
   return (
@@ -59,7 +61,7 @@ const OurMenuPage = ({
         </section>
         <section className="search-block">
           <div className="container d-flex">
-            <Categories db={db} setDb={setDb} />
+            <Categories db={menuData} setDb={setMenuData} />
             <Sort
               sortTypes={sortTypes}
               onSortData={onSortData}
@@ -96,7 +98,7 @@ const OurMenuPage = ({
             <Pagination
               setCurrentPage={setCurrentPage}
               prevPage={prevPage}
-              totalPages={db.length}
+              totalPages={menuData.length}
             />
             <Modal
               onAddData={onAddData}
