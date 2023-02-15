@@ -3,34 +3,34 @@
 }
 .about-info {
   padding: 100px 0;
-}
-.about-info img {
+  img {
   width: 50%;
 }
-.about-info p {
+p {
   font-size: 20px;
   text-align: left;
   margin: 20px 0;
 }
-.about-info span {
+span {
   font-weight: 700;
   font-size: 30px;
   line-height: 0px;
   color: #db8e00;
 }
+}
 .about-info_top {
   align-items: flex-start;
   margin-bottom: 60px;
-}
-.about-info_top > div{
+  > div{
   padding-left: 30px;
   width: 50%;
 
 }
-.about-info_bottom >div {
-  padding-right:30px;
-  margin-bottom: 100px;
 }
 .about-info_bottom{
   flex-direction: row-reverse;
+  >div {
+  padding-right:30px;
+  margin-bottom: 100px;
+}
 }

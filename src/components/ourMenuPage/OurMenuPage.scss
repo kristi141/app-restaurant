@@ -1,13 +1,13 @@
 .about-menu-bg {
   background-image: url('../common/image/ourMenu-bg.png');
 }
-.categories ul {
+.categories{
+  ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  list-style: none;
-}
-.categories ul li {
+  list-style: none; 
+  li {
   background-color: #f9f9f9;
   padding: 13px 30px;
   border-radius: 30px;
@@ -16,17 +16,19 @@
   cursor: pointer;
   transition: background-color 0.1s ease-in-out;
   user-select: none;
-}
-.categories ul li:hover {
+  &:hover {
   background-color: #f4f4f4;
 }
-.categories ul li:active {
+  &:active {
   background-color: #ececec;
 }
-.categories ul li.active {
+.active {
   background-color: #282828;
   color: #fff;
 }
+}
+}
+} 
 .sort {
   position: relative;
 }
@@ -35,17 +37,17 @@
   display: -ms-flexbox;
   display: flex;
   align-items: center;
-}
-.sort__label svg {
+  svg {
   margin-right: 8px;
 }
-.sort__label b {
+b {
   margin-right: 8px;
 }
-.sort__label span {
+span {
   color: #673ab7;
   border-bottom: 1px dashed #673ab7;
   cursor: pointer;
+}
 }
 .sort__popup {
   position: absolute;
@@ -57,39 +59,37 @@
   overflow: hidden;
   padding: 10px 0;
   width: 160px;
-}
-.sort__popup ul {
+  ul {
   overflow: hidden;
-}
-.sort__popup ul li {
+  li {
   padding: 12px 20px;
   cursor: pointer;
-}
-.sort__popup ul li.active,
-.sort__popup ul li:hover {
+  .active{
+    background: rgba(254, 95, 30, 0.05);
+    font-weight: bold;
+    color: #673ab7;
+  }
+  &:hover {
   background: rgba(254, 95, 30, 0.05);
 }
-.sort__popup ul li.active {
-  font-weight: bold;
-  color: #673ab7;
+}
+}
 }
 .search-block {
  padding-top: 80px;
-}
-.search-block > div {
+ > div {
   flex-wrap: wrap;
-}
-.search-block > div > div {
+  > div {
   margin-bottom: 30px;
 }
-.search-block .search {
+}
+.search {
   width: 282px;
   height: 41px;
   background: #f9f9f9;
   border-radius: 30px;
   justify-content: space-around;
-}
-.search-block .search input {
+   input {
   border: none;
   outline: none;
   background-color: #f9f9f9;
@@ -97,9 +97,11 @@
   font-size: 16px;
   color: #b8b8bd;
 }
+}
+}
 .pagination{
   margin-top: 40px;
-}
-.pagination button{
+   button{
   margin: 0 10px;
 }
+} 

@@ -2,13 +2,15 @@
   padding: 50px 20px;
 }
 /* ! Slider start*/
-.clearfix:before,
-.clearfix:after {
+.clearfix{
+  &:before{
+   display: table;
+  }
+  &:after {
   content: '';
+  clear: both;
   display: table;
 }
-.clearfix:after {
-  clear: both;
 }
 .hover-text-one {
   overflow: hidden;
@@ -19,8 +21,7 @@
   text-align: center;
   border: 2px solid #673ab7;
   border-radius: 20px;
-}
-.hover-text-one figure {
+  figure {
   position: relative;
   z-index: 1;
   display: inline-block;
@@ -28,14 +29,13 @@
   background: #000000;
   text-align: center;
   cursor: pointer;
-}
-.hover-text-one figure img {
+  img {
   position: relative;
   display: block;
   min-height: 100%;
   opacity: 0.8;
 }
-.hover-text-one figure figcaption {
+figcaption {
   padding: 2em;
   color: #fff;
   text-transform: uppercase;
@@ -46,90 +46,95 @@
   left: 0;
   width: 100%;
   height: 100%;
-}
-.hover-text-one figure figcaption::before,
-.hover-text-one figure figcaption::after {
+  &::before{
+    pointer-events: none;
+  }
+  &::after {
   pointer-events: none;
 }
-
-.hover-text-one figure h3 {
+}
+h3 {
   word-spacing: -0.15em;
   font-weight: 300;
-}
-.hover-text-one figure h3 span {
+  margin: 0;
+   span {
   font-weight: 800;
 }
-.hover-text-one figure h3,
-.hover-text-one figure p {
-  margin: 0;
-}
-.hover-text-one figure p {
+} 
+p {
+  margin: 0; 
   letter-spacing: 1px;
   font-size: 68.5%;
 }
-/* Эффект при наведении */
-figure.effect-text-one img {
-  width: calc(100% + 100px);
+}
+.effect-text-one{
+  img{
+      width: calc(100% + 100px);
   opacity: 0.7;
   transition: opacity 0.35s, transform 0.35s;
   transform: scale(1.2);
-}
-.slider-image img {
-  width: 100%;
-}
-/* .slick-slider {
-  display: flex !important;
-} */
-figure.effect-text-one figcaption {
+  }
+  figcaption {
   top: auto;
   bottom: 0;
   height: 80%;
   text-align: left;
 }
-figure.effect-text-one h3,
-figure.effect-text-one p {
-  transform: translate3d(0, 40px, 0);
-}
-figure.effect-text-one h3 {
+h3{
   color: #f66d52 !important;
   transition: transform 0.35s;
+  transform: translate3d(0, 40px, 0);
 }
-figure.effect-text-one p {
+p {
   background: rgba(0, 0, 0, 0.6);
   color: #fff;
   padding: 10px;
   opacity: 0;
   transition: opacity 0.2s, transform 0.35s;
+  transform: translate3d(0, 40px, 0);
 }
-figure.effect-text-one:hover img,
-figure.effect-text-one:hover p {
+&:hover{
+img{
   opacity: 1;
-}
-figure.effect-text-one:hover img,
-figure.effect-text-one:hover h3,
-figure.effect-text-one:hover p {
   transform: translate3d(0, 0, 0);
 }
-figure.effect-text-one:hover p {
+p{
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
   transition-delay: 0.05s;
   transition-duration: 0.35s;
 }
+h3{
+  transform: translate3d(0, 0, 0);
+}
+}
+}
+}
+/* Эффект при наведении */
+.slider-image{
+   img {
+  width: 100%;
+}
+}
+/* .slick-slider {
+  display: flex !important;
+} */
 /* ! Slider end */
 .slider-left,
 .slider-right {
   cursor: pointer;
 }
-.slick-prev:before{
-  content: url('../image/slider-left.svg') 
-}
-.slick-next:before{
-  content: url('../image/slider0right.svg') 
-}
 .slick-prev{
   left: -97px;
   top: 46%;
+  &:before{
+  content: url('../image/slider-left.svg') 
+}
 }
 .slick-next{
   right: -52px;
   top: 185px;
+  &:before{
+  content: url('../image/slider0right.svg') 
+}
 }
